@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 use App\Models\Pengguna;
+=======
+use App\Models\User;
+>>>>>>> 40b295726de6f8408e5b6b58da237cb0ee82619c
 
 return [
 
@@ -64,8 +68,18 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
+<<<<<<< HEAD
             'model' => Pengguna::class,
         ],
+=======
+            'model' => env('AUTH_MODEL', User::class),
+        ],
+
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
+>>>>>>> 40b295726de6f8408e5b6b58da237cb0ee82619c
     ],
 
     /*
