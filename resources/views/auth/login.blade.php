@@ -29,6 +29,14 @@
                     <div class="card border-0 shadow-sm rounded-3">
                         <div class="card-body p-4 p-md-5">
 
+                            {{-- Alert sukses setelah daftar akun --}}
+                            @if (session('success'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{ session('success') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            @endif
+
                             {{-- Alert jika login gagal atau ada pesan error --}}
                             @if (session('error'))
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -74,10 +82,18 @@
                                 </div>
 
                                 {{-- Tombol Submit --}}
-                                <div class="d-grid">
+                                <div class="d-grid mb-3">
                                     <button type="submit" class="btn btn-primary py-2 fw-semibold">
                                         <i class="bi bi-box-arrow-in-right me-1"></i> Login
                                     </button>
+                                </div>
+
+                                {{-- Link Daftar untuk Pemilik Kebun --}}
+                                <div class="text-center pt-2 border-top">
+                                    <span class="text-muted small">Pemilik kebun belum punya akun?</span>
+                                    <a href="{{ url('/register') }}" class="small fw-semibold text-decoration-none ms-1">
+                                        Daftar di sini
+                                    </a>
                                 </div>
                             </form>
 
